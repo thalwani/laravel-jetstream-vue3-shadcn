@@ -17,6 +17,7 @@ defineProps({
 </script>
 
 <template>
+    <Head :title="title" />
     <div class="app">
         <div class="hidden flex-col md:flex border-b">
             <div class="flex h-16 items-center container relative">

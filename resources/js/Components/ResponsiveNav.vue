@@ -168,7 +168,7 @@ const logout = () => {
                             />
 
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                Manage Team
+                                {{ $t("Manage Team") }}
                             </div>
 
                             <!-- Team Settings -->
@@ -181,7 +181,7 @@ const logout = () => {
                                 "
                                 :active="route().current('teams.show')"
                             >
-                                Team Settings
+                                {{ $t("Team Settings") }}
                             </ResponsiveNavLink>
 
                             <ResponsiveNavLink
@@ -189,7 +189,7 @@ const logout = () => {
                                 :href="route('teams.create')"
                                 :active="route().current('teams.create')"
                             >
-                                Create New Team
+                                {{ $t("Create New Team") }}
                             </ResponsiveNavLink>
 
                             <!-- Team Switcher -->
@@ -205,7 +205,7 @@ const logout = () => {
                                 <div
                                     class="block px-4 py-2 text-xs text-gray-400"
                                 >
-                                    Switch Teams
+                                    {{ $t("Switch Team") }}
                                 </div>
 
                                 <template

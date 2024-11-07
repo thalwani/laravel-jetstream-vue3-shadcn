@@ -100,17 +100,17 @@ const displayableRole = (role) => {
             <!-- Add Team Member -->
             <FormSection @submitted="addTeamMember">
                 <template #title>
-                    Add Team Member
+                    {{ $t('Add Team Member') }}
                 </template>
 
                 <template #description>
-                    Add a new team member to your team, allowing them to collaborate with you.
+                    {{ $t('Add a new team member to your team, allowing them to collaborate with you.') }}
                 </template>
 
                 <template #form>
                     <div class="col-span-6">
                         <div class="max-w-xl text-sm text-gray-600 dark:text-gray-400">
-                            Please provide the email address of the person you would like to add to this team.
+                          {{ $t('Please provide the email address of the person you would like to add to this team.') }}
                         </div>
                     </div>
 
@@ -128,7 +128,7 @@ const displayableRole = (role) => {
 
                     <!-- Role -->
                     <div v-if="availableRoles.length > 0" class="col-span-6 lg:col-span-4">
-                        <InputLabel for="roles" value="Role" />
+                        <InputLabel for="roles" :value="$t('Role')" />
                         <InputError :message="addTeamMemberForm.errors.role" class="mt-2" />
 
                         <div class="relative z-0 mt-1 border border-gray-200 dark:border-gray-700 rounded-lg cursor-pointer">
@@ -144,7 +144,7 @@ const displayableRole = (role) => {
                                     <!-- Role Name -->
                                     <div class="flex items-center">
                                         <div class="text-sm text-gray-600 dark:text-gray-400" :class="{'font-semibold': addTeamMemberForm.role == role.key}">
-                                            {{ role.name }}
+                                            {{ $t(role.name) }}
                                         </div>
 
                                         <svg v-if="addTeamMemberForm.role == role.key" class="ms-2 h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -164,11 +164,11 @@ const displayableRole = (role) => {
 
                 <template #actions>
                     <ActionMessage :on="addTeamMemberForm.recentlySuccessful" class="me-3">
-                        Added.
+                        {{ $t('Added.') }}
                     </ActionMessage>
 
                     <PrimaryButton :class="{ 'opacity-25': addTeamMemberForm.processing }" :disabled="addTeamMemberForm.processing">
-                        Add
+                        {{ $t('Add') }}
                     </PrimaryButton>
                 </template>
             </FormSection>
@@ -180,11 +180,11 @@ const displayableRole = (role) => {
             <!-- Team Member Invitations -->
             <ActionSection class="mt-10 sm:mt-0">
                 <template #title>
-                    Pending Team Invitations
+                    {{ $t('Pending Team Invitations') }}
                 </template>
 
                 <template #description>
-                    These people have been invited to your team and have been sent an invitation email. They may join the team by accepting the email invitation.
+                    {{ $t('These people have been invited to your team and have been sent an invitation email. They may join the team by accepting the email invitation.') }}
                 </template>
 
                 <!-- Pending Team Member Invitation List -->
@@ -314,7 +314,7 @@ const displayableRole = (role) => {
 
             <template #footer>
                 <SecondaryButton @click="currentlyManagingRole = false">
-                    Cancel
+                  {{ $t('Cancel') }}
                 </SecondaryButton>
 
                 <PrimaryButton
@@ -323,7 +323,7 @@ const displayableRole = (role) => {
                     :disabled="updateRoleForm.processing"
                     @click="updateRole"
                 >
-                    Save
+                {{ $t('Save') }}
                 </PrimaryButton>
             </template>
         </DialogModal>

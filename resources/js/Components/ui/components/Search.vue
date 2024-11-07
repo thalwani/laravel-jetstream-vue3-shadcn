@@ -6,7 +6,7 @@ import { Input } from '@/Components/ui/input'
   <div>
     <Input
       type="search"
-      placeholder="Search..."
+      :placeholder="$t('Search...')"
       class="md:w-[100px] lg:w-[300px]"
     />
   </div>

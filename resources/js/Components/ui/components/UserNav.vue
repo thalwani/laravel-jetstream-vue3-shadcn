@@ -47,7 +47,7 @@ const initials = (username) => {
             <DropdownMenuGroup>
                 <DropdownMenuItem>
                     <Link class="w-full" :href="route('profile.show')"
-                        >Profile</Link
+                        >{{ $t('Profile') }}</Link
                     >
                 </DropdownMenuItem>
             </DropdownMenuGroup>
@@ -55,7 +55,7 @@ const initials = (username) => {
             <DropdownMenuItem>
                 <!-- Authentication -->
                 <form @submit.prevent="logout" class="w-full">
-                    <button class="w-full flex">Log Out</button>
+                    <button class="w-full flex">{{ $t('Log Out') }}</button>
                 </form>
             </DropdownMenuItem>
         </DropdownMenuContent>

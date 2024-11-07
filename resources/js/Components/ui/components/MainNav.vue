@@ -8,16 +8,10 @@ import { Link } from '@inertiajs/vue3';
     :class="cn('flex items-center space-x-4 lg:space-x-6', $attrs.class ?? '')"
   >
     <Link
-      :href="route('dashboard')"
+      :href="route('dashboard')"cal
       class="text-sm font-medium transition-colors hover:text-primary"
     >
-      Dashboard
-    </Link>
-    <Link
-      :href="route('products')"
-      class="text-sm font-medium transition-colors hover:text-primary"
-    >
-      Products
+      {{ $t('Dashboard') }}
     </Link>
   </nav>
 </template>

@@ -7,6 +7,8 @@ import DateRangePicker from "@/Components/ui/components/DateRangePicker.vue";
 import Overview from "@/Components/ui/components/Overview.vue";
 import RecentSales from "@/Components/ui/components/RecentSales.vue";
 
+const tab = []
+
 import {
   Card,
   CardContent,
@@ -20,30 +22,30 @@ import {
   TabsList,
   TabsTrigger,
 } from '@/Components/ui/tabs'
-import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
+  import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
 </script>
 
 <template>
-    <AppLayout title="Dashboard">
+    <AppLayout :title="$t('Dashboard')">
         <div class="flex-1 space-y-4">
             <div class="flex items-center justify-between space-y-2">
-                <h2 class="text-3xl font-bold tracking-tight">Dashboard</h2>
+                <h2 class="text-3xl font-bold tracking-tight">{{ $t('Dashboard') }}</h2>
                 <div class="flex items-center space-x-2">
                     <DateRangePicker />
-                    <Button>Download</Button>
+                    <Button>{{ $t('Filter') }}</Button>
                 </div>
             </div>
             <Tabs default-value="overview" class="space-y-4">
                 <TabsList>
-                    <TabsTrigger value="overview"> Overview </TabsTrigger>
+                    <TabsTrigger value="overview"> {{ $t('Overview') }} </TabsTrigger>
                     <TabsTrigger value="analytics" disabled>
-                        Analytics
+                        {{ $t('Analytics') }}
                     </TabsTrigger>
                     <TabsTrigger value="reports" disabled>
-                        Reports
+                        {{ $t('Reports') }}
                     </TabsTrigger>
                     <TabsTrigger value="notifications" disabled>
-                        Notifications
+                        {{ $t('Notifications') }}
                     </TabsTrigger>
                 </TabsList>
                 <TabsContent value="overview" class="space-y-4">
@@ -53,7 +55,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
                                 class="flex flex-row items-center justify-between space-y-0 pb-2"
                             >
                                 <CardTitle class="text-sm font-medium">
-                                    Total Revenue
+                                    {{ $t('Total Revenue') }}
                                 </CardTitle>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +75,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
                             <CardContent>
                                 <div class="text-2xl font-bold">$45,231.89</div>
                                 <p class="text-xs text-muted-foreground">
-                                    +20.1% from last month
+                                    +20.1% {{ $t('from last month') }}
                                 </p>
                             </CardContent>
                         </Card>
@@ -82,7 +84,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
                                 class="flex flex-row items-center justify-between space-y-0 pb-2"
                             >
                                 <CardTitle class="text-sm font-medium">
-                                    Subscriptions
+                                    {{ $t('Subscriptions') }}
                                 </CardTitle>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +108,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
                             <CardContent>
                                 <div class="text-2xl font-bold">+2350</div>
                                 <p class="text-xs text-muted-foreground">
-                                    +180.1% from last month
+                                    +180.1% {{ $t('from last month') }}
                                 </p>
                             </CardContent>
                         </Card>
@@ -115,7 +117,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
                                 class="flex flex-row items-center justify-between space-y-0 pb-2"
                             >
                                 <CardTitle class="text-sm font-medium">
-                                    Sales
+                                    {{ $t('Sales') }}
                                 </CardTitle>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +142,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
                             <CardContent>
                                 <div class="text-2xl font-bold">+12,234</div>
                                 <p class="text-xs text-muted-foreground">
-                                    +19% from last month
+                                    +19% {{ $t('from last month') }}
                                 </p>
                             </CardContent>
                         </Card>
@@ -149,7 +151,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
                                 class="flex flex-row items-center justify-between space-y-0 pb-2"
                             >
                                 <CardTitle class="text-sm font-medium">
-                                    Active Now
+                                    {{ $t('Active Now') }}
                                 </CardTitle>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -167,7 +169,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
                             <CardContent>
                                 <div class="text-2xl font-bold">+573</div>
                                 <p class="text-xs text-muted-foreground">
-                                    +201 since last hour
+                                    +201 {{ $t('since last hour') }}
                                 </p>
                             </CardContent>
                         </Card>
@@ -175,7 +177,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
                     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
                         <Card class="col-span-4">
                             <CardHeader>
-                                <CardTitle>Overview</CardTitle>
+                                <CardTitle>{{ $t('Overview') }}</CardTitle>
                             </CardHeader>
                             <CardContent class="pl-2">
                                 <Overview />
@@ -183,9 +185,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/Components/ui/avatar";
                         </Card>
                         <Card class="col-span-3">
                             <CardHeader>
-                                <CardTitle>Recent Sales</CardTitle>
+                                <CardTitle>{{ $t('Recent Sales') }}</CardTitle>
                                 <CardDescription>
-                                    You made 265 sales this month.
+                                    {{ $t('Sales this month.') }}
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>

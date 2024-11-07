@@ -64,7 +64,7 @@ const logout = () => {
             <div class="w-60">
                 <!-- Team Management -->
                 <div class="block px-4 py-2 text-xs text-gray-400">
-                    Manage Team
+                    {{ $t("Manage Team") }}
                 </div>
 
                 <!-- Team Settings -->
@@ -73,14 +73,14 @@ const logout = () => {
                         route('teams.show', $page.props.auth.user.current_team)
                     "
                 >
-                    Team Settings
+                    {{ $t("Team Settings") }}
                 </DropdownLink>
 
                 <DropdownLink
                     v-if="$page.props.jetstream.canCreateTeams"
                     :href="route('teams.create')"
                 >
-                    Create New Team
+                    {{ $t("Create New Team") }}
                 </DropdownLink>
 
                 <!-- Team Switcher -->
@@ -90,7 +90,7 @@ const logout = () => {
                     />
 
                     <div class="block px-4 py-2 text-xs text-gray-400">
-                        Switch Teams
+                        {{ $t("Switch Team") }}
                     </div>
 
                     <template
